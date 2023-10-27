@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2023.1.1 (64-bit)
+# SW Build 3900603 on Fri Jun 16 19:31:24 MDT 2023
+# IP Build 3900379 on Sat Jun 17 05:28:05 MDT 2023
+# SharedData Build 3899622 on Fri Jun 16 03:34:24 MDT 2023
+# Start of session at: Thu Oct 26 22:41:53 2023
+# Process ID: 10928
+# Current directory: C:/Users/peter/Desktop/Projects/Decimal_Counter
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11360 C:\Users\peter\Desktop\Projects\Decimal_Counter\Decimal_Counter.xpr
+# Log file: C:/Users/peter/Desktop/Projects/Decimal_Counter/vivado.log
+# Journal file: C:/Users/peter/Desktop/Projects/Decimal_Counter\vivado.jou
+# Running On: DESKTOP-0F48Q2Q, OS: Windows, CPU Frequency: 1992 MHz, CPU Physical cores: 4, Host memory: 16941 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/peter/Desktop/Projects/Decimal_Counter/Decimal_Counter.xpr
+update_compile_order -fileset sources_1
+synth_design -rtl -rtl_skip_mlo -name rtl_1
+export_ip_user_files -of_objects  [get_files C:/Users/peter/Desktop/Projects/Decimal_Counter/Decimal_Counter.srcs/utils_1/imports/synth_1/wrapper.dcp] -no_script -reset -force -quiet
+remove_files  -fileset utils_1 C:/Users/peter/Desktop/Projects/Decimal_Counter/Decimal_Counter.srcs/utils_1/imports/synth_1/wrapper.dcp
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+open_hw_manager
+connect_hw_server -allow_non_jtag
+open_hw_target
+set_property PROGRAM.FILE {C:/Users/peter/Desktop/Projects/Decimal_Counter/Decimal_Counter.runs/impl_1/wrapper.bit} [get_hw_devices xc7a35t_0]
+current_hw_device [get_hw_devices xc7a35t_0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices xc7a35t_0] 0]
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/peter/Desktop/Projects/Decimal_Counter/Decimal_Counter.runs/impl_1/wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
+reset_run synth_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+launch_runs impl_1 -jobs 4
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 4
+wait_on_run impl_1
+set_property PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property FULL_PROBES.FILE {} [get_hw_devices xc7a35t_0]
+set_property PROGRAM.FILE {C:/Users/peter/Desktop/Projects/Decimal_Counter/Decimal_Counter.runs/impl_1/wrapper.bit} [get_hw_devices xc7a35t_0]
+program_hw_devices [get_hw_devices xc7a35t_0]
+refresh_hw_device [lindex [get_hw_devices xc7a35t_0] 0]
